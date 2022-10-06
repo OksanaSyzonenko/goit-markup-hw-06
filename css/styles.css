@@ -118,24 +118,28 @@ button{
     column-gap: 50px;
 }
 
+.menu-item-studio,
+.menu-item{
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+
 .menu-contact,    
 .menu-item-studio,
 .menu-item{
     font-weight: 500;
     letter-spacing: 0.02em;
-    transition-property: color;
 }
 
 .menu-link{
     font-weight: 500;
     letter-spacing: 0.02em;
     color:var(--primary-text-color-title);
-    transition-property: color;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .menu-link-studio{
     color: var(--accent-color);
-    transition-property: color;
 }
 
 .menu-link-studio::after{
@@ -167,13 +171,13 @@ button{
     letter-spacing: 0.02em;
     color: var(--primary-text-color-theme-light);
     align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .contact-email-icon,
 .contact-phone-number-icon{
     margin-right: 10px;
     fill: currentColor;
-    transition-property: color;
 }
 
 .contact-email-icon:hover,
@@ -183,10 +187,18 @@ button{
 
 .contact-email:hover,
 .contact-email:focus{
-    color: var(--accent-color);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    color: var(--accent-color);  
 }
 
+.contact-phone-number:hover,
+.contact-phone-number:focus{
+    color: var(--accent-color);
+}
+
+.contact-phone-number-icon:hover,
+.contact-phone-number-icon:focus{
+    color: var(--accent-color);
+}
 
 /*--HERO--*/
 
@@ -259,7 +271,8 @@ button{
     border-radius: 4px;
     width: 216px;
     height: 50px;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .modal-open-btn-all{
@@ -274,9 +287,9 @@ button{
     border: none;
     border-radius: 4px;
     padding: 6px 22px;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
-
 
 .modal-open-btn-all:hover,
 .modal-open-btn-all:focus{
@@ -308,24 +321,24 @@ button{
 
 .portfolio-card-link{
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-card-link:hover,
 .portfolio-card-link:focus{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .modal-open-btn-portfolio{
     font-family: var(--primary-font);
     font-weight: 500;
     font-size: 16px;
-    line-height: 1.63;
-    /* identical to box height, or 162% */
+    line-height: 1.62;
     text-align: center;
     border: none;
     border-radius: 4px;
     padding: 6px 22px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-open-btn-portfolio:hover,
@@ -333,8 +346,7 @@ button{
     background-color:var(--accent-color);
     color: var(--primary-text-color-theme-dark);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    border-radius: 4px;    
 }
 
 .overlay-portfolio-card{
@@ -347,13 +359,12 @@ button{
     font-weight: 400;
     font-size: 18px;
     line-height: 1.56;
-    /* or 156% */
     letter-spacing: 0.03em;
     color: #FFFFFF;
     padding: 63px 24px;
     background: rgba(33, 150, 243, 0.9);
     transform: translateY(100%);
-    transform: transform 250ms linear;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-card-link-img-wrapper{
@@ -361,8 +372,8 @@ button{
     overflow: hidden;
 }
 
-.portfolio-card-link-img-wrapper:hover .overlay-portfolio-card,
-.portfolio-card-link-img-wrapper:focus .overlay-portfolio-card{
+.portfolio-card-link:hover .overlay-portfolio-card,
+.portfolio-card-link:focus .overlay-portfolio-card{
     transform: translate Y (100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(0%);
@@ -431,7 +442,6 @@ button{
 .projects-name{
     font-size: 18px;
     line-height: 2;
-    /* identical to box height, or 200% */
     letter-spacing: 0.06em;
     padding-top: 20px;
     padding-left: 24px;
@@ -516,13 +526,14 @@ button{
     border-radius: 50%; 
     background-color: var(--primary-text-color-theme-dark);  
     color: #AFB1B8; 
+    fill: currentColor;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .social-list-link:hover,
 .social-list-link:focus{
     background-color: var(--accent-color);
     color: var(--primary-text-color-theme-dark);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .social-list-icon:hover ,
@@ -538,21 +549,21 @@ button{
     border-radius: 0px 0px 4px 4px;
 }
 
-.team-content-wrapper{
+.team-content-wrapper {
     padding-top: 30px;
     padding-bottom: 30px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 }
 
-.section-title{
+.section-title {
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     margin-bottom: 50px;
 }
 
-.team-name{
+.team-name {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
@@ -561,7 +572,7 @@ button{
     margin: 0 0 10px 0;
 }
 
-.team-name-profession{
+.team-name-profession {
     font-size: 16px;
     line-height: 1.18;
     /* identical to box height */
@@ -572,7 +583,7 @@ button{
 
 /*--CLIENTS--*/
 
-.customers-logo{
+.customers-logo {
     fill: currentColor;
 }
 
@@ -586,7 +597,6 @@ button{
 .customers-card:hover,
 .customers-card:focus{
     border-color: var(--accent-color);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .customers-list{
@@ -601,24 +611,23 @@ button{
     align-items: center;
     justify-content: center;
     color: #AFB1B8;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
   
-
 .customers-link:hover,
-.customers-link:focus{
-    color: var(--accent-color);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
+.customers-link:focus {    
+    color: var(--accent-color); 
 }
 
 /*--FOOTER--*/
 
 .footer-social-list-link:hover,
-.footer-social-list-link:focus{
+.footer-social-list-link:focus {
     background-color: var(--accent-color);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    
 }
 
-.footer-social-title{
+.footer-social-title {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
@@ -627,7 +636,7 @@ button{
     margin-bottom: 20px;
 }
 
-.footer-social-list-link{
+.footer-social-list-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -636,26 +645,27 @@ button{
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--primary-text-color-theme-dark);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
-.footer{
+.footer {
     background-color: #2F303A;
     padding: 60px 0;
 }
 
-.footer .container{
+.footer .container {
     display: flex;
     gap: 70px;
     align-items: baseline;
 }
 
-.footer .logo{
+.footer .logo {
     margin-right: 0;
     display: block;
     margin-bottom: 20px;
 }
 
-.footer-list{
+.footer-list {
     list-style: none;
     margin-right: 0;
     margin-bottom: 0;
@@ -666,37 +676,94 @@ button{
 
 .adress,
 .email,
-.phone{
+.phone {
     font-style: normal;
  }
 
-.adress-link{
+.adress-link {
     color: var(--primary-text-color-theme-dark);
     margin-right: 0;
     margin-bottom: 9px;
 }
 
-.footer-contact{
+.footer-contact {
     margin-bottom: 9px;
     color: var(--secondary-text-color-theme-dark);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }   
 
 .footer-contact:hover,
-.footer-contact:focus{
+.footer-contact:focus {
     color: var(--accent-color);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
-.footer-social-list{
+.footer-social-list {
     gap: 10px;
 }
 
+/*--MAILING--*/
+
+.footer-email-title{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.footer-email-input-wrapper {
+    position: relative;
+    display: block;
+}
+
+.footer-email-input-form{
+    width: 358px;
+    height: 50px;
+    background: #2F303A;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    margin-right: 12px;
+    padding-left: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-email-button-submit{
+    width: 200px;
+    height: 50px;
+    background: #2196F3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border-color: #2196F3;
+    margin: auto;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+}
+
+.footer-email-input-form-icon{
+    fill: #FFFFFF;
+}
+
+/*--BACKDROP--*/
+
 .backdrop{
     position: absolute;
-    width: 528px;
-    height: 581px;
-    left: 536px;
-    top: 221px;
+    width: 1600px;
+    height: 1024px;
+    top: 24px;
+    left: 0;
     background: #FFFFFF;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -718,21 +785,164 @@ button{
     height: 581px;
     left: 50%;
     top: 50%;
-    background: rgba(0, 0, 0, 0.2);
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 40px;
     transform: translate(-50%, -50%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-btn{
+.modal-form-title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form-input {
+   width: 100%;
+   height: 40px;
+   border: 1px solid rgba(33, 33, 33, 0.2);
+   border-radius: 4px;
+   padding-left: 42px;
+   transition: border-color 250ms linear;
+}
+
+.modal-form-field-desc {
+    display: block;
+    font-size: 12px;
+    color: #757575;
+    margin-bottom: 4px;
+}
+
+.modal-form-field {
+    margin-bottom: 10px;
+}
+
+.modal-form-input-icon {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 25%;
+    left: 12px;
+    transform: translate(-25%);
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: #FFFFFF;
+    transition: background-color 250ms linear;
+}
+
+.modal-form-input-wrapper {
+    position: relative;
+    display: block;
+}
+
+.modal-form-input:focus + .modal-form-input-icon {
+    fill: #2196F3;
+}
+
+.modal-form-input:focus {
+    outline: none;
+    border-color:#2196F3;
+}
+
+.modal-form-message {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 120px;
+    color: #757575;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 15px;
+    resize: none;
+    transition: border-color 250ms linear;
+}
+
+.modal-form-message:focus {
+    outline: none;
+    border-color:#2196F3;
+}
+
+.modal-form-message::placeholder {
+    text-transform: uppercase;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-own-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #212121;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.modal-form-own-checkbox-icon {
+    display: none;
+    fill: #FFFFFF;
+}
+
+.modal-form-check:checked + .modal-form-own-checkbox {
+    background-color:#2196F3;
+}
+
+.modal-form-check:checked + .modal-form-own-checkbox .modal-form-own-checkbox-icon {
+    display: block;
+    fill: #FFFFFF;
+}
+
+.modal-form-check-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-form-check {
+    position: absolute;
+    appearance: none;
+}
+
+.modal-button-submit {
+    width: 200px;
+    height: 50px;
+    background: #2196F3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border-color: #2196F3;
+    margin: auto;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+
+.modal-close-btn {
+    position: absolute;
+    top: 3px;
+    right: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0;
 }
+
