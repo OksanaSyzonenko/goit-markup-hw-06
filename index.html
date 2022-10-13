@@ -424,19 +424,21 @@
                 <!--Розсилка-->
                 <div>
                     <h2 class="footer-email-title">Підпишіться на розсилку</h2>
-                    <span class="footer-email-input-wrapper">
-                        <input type="text"
-                        class="footer-email-input-form"
-                        required pattern="[a-z]+"
-                        name="user_name"
-                        placeholder="E-mail"/>
-                        <button type="submit" class="footer-email-button-submit">
-                            Підписатися
-                            <svg aria-label="іконка повідомлення" class="footer-email-input-form-icon" width="24" height="24">
-                                <use href="./images/sprite.svg#icon-send"></use>
-                            </svg>
-                        </button>
-                    </span>    
+                    <form class="footer-email-modal-form">
+                        <span class="footer-email-input-wrapper">
+                            <input type="text"
+                            class="footer-email-input-form"
+                            required pattern="[a-z]+"
+                            name="user_name"
+                            placeholder="E-mail"/>
+                            <button type="submit" class="footer-email-button-submit">
+                                Підписатися
+                                <svg aria-label="іконка повідомлення" class="footer-email-input-form-icon" width="24" height="24">
+                                    <use href="./images/sprite.svg#icon-send"></use>
+                                </svg>
+                            </button>
+                        </span>    
+                    </form>
                 </div>               
             </div>       
         </footer>   
@@ -457,7 +459,7 @@
                                         class="modal-form-input"                                    
                                         required pattern="[a-zA-ZА-яА-ЯіІїЇ]+"
                                         name="user_name" 
-                                        placeholder="Оксана"/>
+                                        placeholder="name"/>
                                             <svg aria-label="іконка людини" class="modal-form-input-icon" width="18" height="18">
                                                 <use href="./images/sprite.svg#icon-person"></use>                                              
                                             </svg>
@@ -484,7 +486,7 @@
                                         class="modal-form-input"
                                         required pattern="[a-z]+"
                                         name="user_name"
-                                        placeholder="xxx@gmail.com"/>
+                                        placeholder="email"/>
                                             <svg aria-label="іконка пошти" class="modal-form-input-icon" width="18" height="18">
                                                 <use href="./images/sprite.svg#icon-email2"></use>
                                             </svg>
@@ -503,11 +505,11 @@
                                     <svg class="modal-form-own-checkbox">
                                         <use class="modal-form-own-checkbox-icon" href="./images/sprite.svg#icon-checkmark"></use>
                                     </svg>
-                                    Погоджуюся з розсилкою та приймаю&nbsp; <a href="">Умови договору</a> 
+                                    Погоджуюся з розсилкою та приймаю&nbsp; <a href="" class="modal-form-own-checkbox-terms">Умови договору</a> 
                                 </label>
                                 <button type="submit" class="modal-button-submit">Відправити</button>
                             </form>                 
-                </div>        
+                </div> 
             </div>  
         <script src="./js/modal.js"></script>   
     </body>
